@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gestalt": "^0.93.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.8",
+    "react-spinners": "^0.5.3",
+    "react-stripe-elements": "^2.0.3",
+    "strapi-sdk-javascript": "^0.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
