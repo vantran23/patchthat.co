@@ -2,22 +2,23 @@ import React from 'react';
 import { Box, Toast } from 'gestalt';
 
 const ToastMessage = ({ show, message }) => (
-   show && (
-    <Box
-    dangerouslySetInlineStyle={{
-        __style: {
-            bottom: 250,
-            left: "50%",
-            transform: "translatex(-50%)"
+    show && (
+        <Box
+            dangerouslySetInlineStyle={{
+                __style: {
+                    bottom: 50,
+                    left: "50%",
+                    transform: "translatex(-50%)"
+                }
+            }}
+            position="fixed"
+        >
 
-        }
-    }}
-    position="fixed"
-    >
+            <Toast color="orange" text={message} />
+        </Box>
 
-   <Toast color="orange" text={message} />
-   </Box>
-   
+    )
+
 );
 
 
