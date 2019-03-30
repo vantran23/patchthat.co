@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './index.css';
+import 'gestalt/dist/gestalt.css';
 import App from "./components/App";
 import Navbar from "./components/Navbar";
 import Signin from "./components/Signin";
@@ -31,4 +31,3 @@ if (module.hot) {
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 registerServiceWorker();
-
