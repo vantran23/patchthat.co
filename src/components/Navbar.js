@@ -8,17 +8,14 @@ const Navbar = () => (
         display="flex" 
         alignItems="center"
         justifyContent="around"
-        height={70} 
+        height={50} 
         color="midnight" 
         padding={1} 
-        shape="roundedBottom"
     >
 
       {/* Title and Logo */}
       <NavLink to="/">
-        <Image 
-            src=""
-       />
+       
     </NavLink>
 
     {/* Signin Link*/}
