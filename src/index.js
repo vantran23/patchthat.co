@@ -8,6 +8,7 @@ import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Checkout from "./components/Checkout";
 import registerServiceWorker from "./registerServiceWorker";
+import firebase from './firebase';
 
 const Root = () => (
     <Router>

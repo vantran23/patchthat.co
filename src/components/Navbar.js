@@ -9,7 +9,7 @@ const Navbar = () => (
         alignItems="center"
         justifyContent="around"
         height={50} 
-        color="midnight" 
+        color="darkWash"
         padding={1} 
     >
 
@@ -21,14 +21,14 @@ const Navbar = () => (
     {/* Signin Link*/}
     <NavLink to="/signin">
         <Text size="xl" color="white">
-         Sign In
+         Sign In |
         </Text>
     </NavLink>
 
     {/* Signout Link*/}
     <NavLink to="/signup">
         <Text size="xl" color="white">
-         Sign Up
+         Create Account
         </Text>
     </NavLink>
 

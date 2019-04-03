@@ -1,15 +1,17 @@
 import React from "react";
 import { Container, Box, Button, Heading, Text, TextField } from "gestalt";
 import ToastMessage from "./ToastMessage";
+import firebase from '../firebase';
+import AuthContext from '../context/auth';
+
 
 class Signin extends React.Component {
   state = {
-    username: "",
     email: "",
     password: "",
-    confirmPassword:"",
     toast: false,
-    toastMessage: ""
+    toastMessage: "",
+    error:""
   };
 
   handleChange = ({ event, value }) => {
@@ -20,6 +22,15 @@ class Signin extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
+
+    const { email, password } = this.state;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log(response)
+      })
+       
+
+
     if (this.isFormEmpty(this.state)) {
       this.showToast("Fill in all fields");
       return;
@@ -27,8 +38,8 @@ class Signin extends React.Component {
     console.log("submitted");
   };
 
-  isFormEmpty = ({ username, email, password, confirmPassword }) => {
-    return !username || !email || !password || !confirmPassword;
+  isFormEmpty = ({ email, password }) => {
+    return !email || !password;
   };
 
   showToast = toastMessage => {
@@ -75,12 +86,12 @@ class Signin extends React.Component {
               </Text>
             </Box>
 
-            {/* Username Input */}
+            {/* Email Address Input */}
             <TextField
-              id="username"
-              type="text"
-              name="username"
-              placeholder="Username"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Email Address"
               onChange={this.handleChange}
             />
 

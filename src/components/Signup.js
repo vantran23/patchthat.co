@@ -1,15 +1,19 @@
 import React from "react";
 import { Container, Box, Button, Heading, Text, TextField } from "gestalt";
 import ToastMessage from "./ToastMessage";
+import ErrorMessage from "./ErrorMessage";
+import firebase from '../firebase';
+import AuthContext from '../context/auth';
 
 class Signup extends React.Component {
   state = {
     username: "",
     email: "",
     password: "",
-    confirmPassword:"",
+    confirmPassword: "",
     toast: false,
-    toastMessage: ""
+    toastMessage: "",
+    error:""
   };
 
   handleChange = ({ event, value }) => {
@@ -19,6 +23,21 @@ class Signup extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
+    const { email, password } = this.state;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log(response)
+      })
+      // .catch((error) => {
+      //   const {errorMessage} = error
+      //   this.showToast({errorMessage})
+  
+      //  })
+
+
+
+
 
     if (this.isFormEmpty(this.state)) {
       this.showToast("Fill in all fields");
@@ -36,11 +55,19 @@ class Signup extends React.Component {
     setTimeout(() => this.setState({ toast: false, toastMessage: "" }), 5000);
   };
 
+  // showError = ErrorMessage => {
+  //   this.setState({ error: true, ErrorMessage });
+  // };
+
   render() {
     const { toastMessage, toast } = this.state;
-
+    // const { error } = this.state;
+    //const displayError = error === '' ? '' : <h1>{error}</h1>
+  
     return (
+
       <Container>
+      
         <Box
           dangerouslySetInlineStyle={{
             __style: {
@@ -110,9 +137,11 @@ class Signup extends React.Component {
           </form>
         </Box>
         <ToastMessage show={toast} message={toastMessage} />
+        {/* <ErrorMessage show={error} message={ErrorMessage} /> */}
       </Container>
     );
   }
 }
+
 
 export default Signup;
