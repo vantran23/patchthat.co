@@ -7,9 +7,9 @@ const Navbar = () => (
     <Box 
         display="flex" 
         alignItems="center"
-        justifyContent="around"
+        justifyContent="right"
         height={50} 
-        color="darkWash"
+        color="midnight"
         padding={1} 
     >
 
