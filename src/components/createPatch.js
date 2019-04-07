@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import { Box } from "gestalt";
+import axios from 'axios';
 
 class createPatch extends Component {
     state = {
@@ -13,16 +14,18 @@ class createPatch extends Component {
     }
 
     fileUploadHandler = () => {
-        axios.postt('');
+        axios.post('https://us-central1-patch-that.cloudfunctions.net/uploadFile');
     }
 
 
     render() {
         return (
+        <Box>
             <div className="createPatch">
             <input type="file" onChange={this.fileSelectedHandler}/>
             <button onClick={this.fileUploadHandler}>Upload Artwork</button>
             </div>
+        </Box>
 
         )
     }
