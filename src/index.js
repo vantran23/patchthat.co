@@ -7,8 +7,10 @@ import Navbar from "./components/Navbar";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Checkout from "./components/Checkout";
+import CreatePatch from "./components/createPatch";
+
 import registerServiceWorker from "./registerServiceWorker";
-import firebase from './firebase';
+
 
 const Root = () => (
     <Router>
@@ -18,6 +20,8 @@ const Root = () => (
                 <Route component={Signin} path="/signin" />
                 <Route component={Signup} path="/signup" />
                 <Route component={Checkout} path="/checkout" />
+                <Route component={CreatePatch} path="/createPatch" />
+                
         </React.Fragment>
     </Router>
 )
