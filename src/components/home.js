@@ -4,6 +4,7 @@ import "./home.css";
 import Carousel from "./carousel";
 
 
+
 class Home extends Component {
     render() {
         return <Carousel/>

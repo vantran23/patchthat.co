@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Box } from "gestalt";
-import axios from 'axios';
 import * as firebase from 'firebase';
 // import firebase from '../firebase';
 import ImageService from '../services/image';
