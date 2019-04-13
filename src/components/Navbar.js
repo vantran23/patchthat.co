@@ -7,7 +7,7 @@ const Navbar = () => (
     <Box 
         display="flex" 
         alignItems="center"
-        justifyContent="right"
+        justifyContent="center"
         height={50} 
         color="midnight"
         padding={1} 
@@ -28,9 +28,18 @@ const Navbar = () => (
     {/* Signout Link*/}
     <NavLink to="/signup">
         <Text size="xl" color="white">
-         Create Account
+         Create Account | 
         </Text>
     </NavLink>
+
+     {/* Signout Link*/}
+     <NavLink to="/cart">
+        <Text size="xl" color="white">
+          Cart
+        </Text>
+    </NavLink>
+
+    
 
 
     </Box>

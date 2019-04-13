@@ -6,9 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./components/Navbar";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
-import Checkout from "./components/Checkout";
+import Checkout from './components/checkout/Checkout';
 import CreatePatch from "./components/createPatch";
 import Home from "./components/home";
+import Cart from './components/cart/cart';
 
 import registerServiceWorker from "./registerServiceWorker";
 
@@ -23,6 +24,7 @@ const Root = () => (
                 <Route component={Signup} path="/signup" />
                 <Route component={Checkout} path="/checkout" />
                 <Route component={CreatePatch} path="/createPatch" />
+                <Route component={Cart} path="/cart" />
             
         </React.Fragment>
     </Router>
